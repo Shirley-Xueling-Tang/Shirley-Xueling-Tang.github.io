@@ -2,197 +2,342 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xueling Tang - Resume</title>
+    <title>Xueling Tang - Personal Website</title>
     <style>
+        /* CSS Styling */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
         }
         header {
-            background-color: #2c3e50;
-            color: #ecf0f1;
+            background-color: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            padding-bottom: 30px;
             text-align: center;
-            padding: 20px 0;
-            margin-bottom: 20px;
         }
-        h1 {
+        header h1 {
             margin: 0;
+            font-size: 48px;
         }
-        .contact-info {
-            margin-top: 10px;
+        nav {
+            background: #35424a;
+            color: #ffffff;
+            padding: 15px;
+            overflow: hidden;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            padding: 0 20px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
         }
         section {
-            background-color: #fff;
-            margin-bottom: 20px;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
         }
         h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 10px;
+            text-align: center;
+            margin-top: 40px;
+            color: #35424a;
         }
-        ul {
-            padding-left: 20px;
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
         }
-        .project {
-            margin-bottom: 20px;
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #35424a;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
         }
-        .project h3 {
-            color: #34495e;
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
         }
-        .award {
-            margin-bottom: 10px;
+        .timeline-item.left {
+            left: 0;
+        }
+        .timeline-item.right {
+            left: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12.5px;
+            background-color: white;
+            border: 4px solid #35424a;
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-item.right::after {
+            left: -13px;
+        }
+        .timeline-item-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+        .timeline-item-content h3 {
+            margin-top: 0;
+        }
+        .skills, .contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .skill-item {
+            background: #fff;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 6px;
+            width: 30%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            nav ul li {
+                display: block;
+                padding: 10px 0;
+            }
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+            }
+            .timeline-item.right::after, .timeline-item.left::after {
+                left: 50%;
+            }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>XUELING TANG</h1>
-        <div class="contact-info">
-            <p>Phone: (+1) 659-202-8253 | Email: xt23@fsu.edu</p>
-        </div>
+        <h1>Xueling Tang</h1>
+        <p>Master of Science in Computer Science</p>
     </header>
 
-    <section id="education">
-        <h2>EDUCATION BACKGROUND</h2>
-        <div class="education-item">
-            <h3>Florida State University</h3>
-            <p>Computer Science (Master) | Aug 2023 - May 2025</p>
-            <p>GPA: 4/4</p>
-            <p>Courses: Computer Architecture, Cryptography, Data Mining, Advanced Operating system, Artificial Intelligence, Software Reverse Engineering, Advanced Data Mining, Theory of Automata and Formal Languages, Advanced Algorithms.</p>
-        </div>
-        <div class="education-item">
-            <h3>The University of Alabama at Birmingham</h3>
-            <p>Computer Science (Pathway) | Aug 2022 - May 2023</p>
-            <p>GPA: 4/4</p>
-            <p>Courses: Object-Oriented Programming, Discrete Structures, Algorithms and Data Structures, Programming Languages (C++/Racket), Academic Writing and Reading, Academic Listening and Speaking.</p>
-        </div>
-        <div class="education-item">
-            <h3>Xi'an Shiyou University</h3>
-            <p>Material Science and Engineering (Bachelor) | Sept 2016 - Jun 2020</p>
-            <p>GPA: 3.55/4 (Rank 9/94)</p>
-            <p>Courses: College Computer Basic Course, Computer Operating Practice, Computer Assembly and Maintenance, Mathematical Modeling, Programming in C Language, Multimedia Application and Development, Computer Graphic Design, Probability and Statistics, Calculus, Analytic geometry of space and linear algebra, Engineering Drawing, etc.</p>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>TECHNICAL EXPERTISE</h2>
+    <nav>
         <ul>
-            <li>Programming: C++, Java, Python, Racket, JavaScript, R</li>
-            <li>Database: SQL, MySQL, MongoDB</li>
-            <li>Frameworks: AutoCAD, ObjectARX</li>
-            <li>Operating System: Linux, MacOS, Windows</li>
-            <li>Project Management Tools: Git, Jira</li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#research">Research & Projects</a></li>
+            <li><a href="#experience">Work Experience</a></li>
+            <li><a href="#skills">Technical Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+    </nav>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>Hello! I'm Xueling Tang, currently pursuing a Master of Science in Computer Science at Florida State University. I am passionate about Artificial Intelligence, Machine Learning, and Data Mining, and I am dedicated to research and projects in these fields.</p>
     </section>
 
-    <section id="experience">
-        <h2>WORK EXPERIENCE</h2>
-        <h3>Wuxi Tuzhi Technology Co., LTD | CAD/C++ Developer | Mar 2021 - May 2022</h3>
-        <p><strong>Technology Stack:</strong> CAD, C++, MySQL, AutoCAD automated annotation system, ObjectARX, CAD automatic recognition technology</p>
-        
-        <div class="project">
-            <h3>SKYCORE Project</h3>
-            <p><strong>Description:</strong> Building an efficient system for installing electrical cabinet components using CAD technology.</p>
-            <p><strong>Responsibilities:</strong></p>
-            <ul>
-                <li>Designing and developing a user-friendly interface</li>
-                <li>Managing project data with database (CRUD operations)</li>
-                <li>Collaborating for smooth integration of components</li>
-                <li>Conducting rigorous testing</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <h3>Hema Fresh Cold Chain Project</h3>
-            <p><strong>Description:</strong> Developing an efficient cold chain system for Hema Fresh online supermarket.</p>
-            <p><strong>Responsibilities:</strong></p>
-            <ul>
-                <li>Developing computer-aided calculation system</li>
-                <li>Designing user-friendly interface</li>
-                <li>Writing sorting algorithms</li>
-                <li>Building data import/export functions</li>
-                <li>Ensuring system reliability through testing</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <h3>Changxue Refrigeration Project</h3>
-            <p><strong>Description:</strong> Creating a system for manufacturing customizable cold storage units.</p>
-            <p><strong>Responsibilities:</strong></p>
-            <ul>
-                <li>Designing user-friendly interface</li>
-                <li>Importing and analyzing blueprints</li>
-                <li>Adding toolbars to streamline design process</li>
-                <li>Creating customizable dynamic blocks</li>
-                <li>Generating accurate drawings and blueprints</li>
-                <li>Designing program logic for reliability and efficiency</li>
-            </ul>
+    <section id="education" class="container">
+        <h2>Education</h2>
+        <div class="timeline">
+            <!-- Florida State University -->
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h3>Florida State University</h3>
+                    <span>Aug 2023 - May 2025</span>
+                    <p>Master of Science in Computer Science, GPA: 3.917</p>
+                    <p><strong>Relevant Coursework:</strong> Computer Architecture, Cryptography, Data Mining, Software Reverse Engineering, Artificial Intelligence, Advanced Operating Systems, Advanced Algorithms, Advanced Data Mining, Theory of Automation and Formal Languages</p>
+                </div>
+            </div>
+            <!-- University of Alabama at Birmingham -->
+            <div class="timeline-item right">
+                <div class="timeline-item-content">
+                    <h3>The University of Alabama at Birmingham</h3>
+                    <span>Aug 2022 - May 2023</span>
+                    <p>Master Pathway in Computer Science, GPA: 4.0</p>
+                    <p><strong>Relevant Coursework:</strong> Object-Oriented Programming, Discrete Structures, Algorithms and Data Structures, Programming Languages (C++/Racket)</p>
+                </div>
+            </div>
+            <!-- Xi'an Shiyou University -->
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h3>Xi'an Shiyou University</h3>
+                    <span>Sep 2016 - Jun 2020</span>
+                    <p>Bachelor in Metal Material Engineering, GPA: 3.55/4 (Ranked 9/94)</p>
+                    <p><strong>Relevant Coursework:</strong> College Computer Basic Course, Computer Operating Practice, Computer Assembly and Maintenance, Mathematical Modeling, Programming in C Language, Multimedia Application and Development, Computer Graphic Design, Probability and Statistics, Calculus, Analytic Geometry of Space and Linear Algebra, Engineering Drawing, etc.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="course-projects">
-        <h2>COURSE PROJECTS</h2>
-        <div class="project">
-            <h3>E-Commerce Website (Group Project) | Node.js, Express, MongoDB, React, Redux | January 2024</h3>
-            <ul>
-                <li>Developed a full-stack e-commerce platform using Node.js and Express for the backend, with React and Redux for the frontend.</li>
-                <li>Implemented secure user authentication and authorization using JSON Web Tokens (JWT) and bcrypt for password hashing.</li>
-                <li>Designed and built RESTful APIs for product management, user profiles, and shopping cart functionality.</li>
-                <li>Created a responsive product browsing system with dynamic filtering, sorting, and pagination using React components.</li>
-            </ul>
-        </div>
-        <div class="project">
-            <h3>Employee Management System (Group Project) | Java, Spring Boot, MySQL, React | August 2023</h3>
-            <ul>
-                <li>Developed a comprehensive employee management system using Java and Spring Boot for the backend RESTful API.</li>
-                <li>Implemented CRUD operations for employee records, departments, and project assignments using Spring Data JPA.</li>
-                <li>Designed and integrated a MySQL database schema, ensuring data integrity and efficient querying.</li>
-                <li>Created a responsive and intuitive user interface using React, featuring real-time updates and form validation.</li>
-                <li>Implemented secure authentication and authorization using Spring Security and JWT tokens.</li>
-            </ul>
-        </div>
-        <div class="project">
-            <h3>Feature-based Transfer Learning for Cross-domain Image Classification | Python, PyTorch, scikit-learn | May 2023</h3>
-            <ul>
-                <li>Implemented a transfer learning project using CIFAR-10 as the source domain and STL-10 as the target domain for image classification.</li>
-                <li>Performed data preprocessing, augmentation, and normalization on both datasets to ensure compatibility and improve model generalization.</li>
-                <li>Developed a Convolutional Autoencoder (CAE) for unsupervised feature extraction, capturing essential image characteristics from both domains.</li>
-                <li>Compared transfer learning methods including Transfer Component Analysis (TCA), Feature Augmentation (FA), and Correlation Alignment (CORAL).</li>
-                <li>Employed Support Vector Machine (SVM) as the classifier evaluating performance using accuracy and F1 score metrics.</li>
-                <li>Conducted comprehensive analysis of results, highlighting the effectiveness of different transfer learning approaches in cross-domain image classification tasks.</li>
-            </ul>
+    <section id="research" class="container">
+        <h2>Research & Projects</h2>
+        <div class="timeline">
+            <!-- Project 1 -->
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h3>Federated Learning for 3D Printing Melt Pool Anomaly Detection</h3>
+                    <span>Dec 2019 - Jun 2020</span>
+                    <p>Developed a Federated Learning framework using PyTorch for anomaly detection in 3D printing melt pool images, addressing data privacy and limited data availability concerns.</p>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="timeline-item right">
+                <div class="timeline-item-content">
+                    <h3>Feature and Parameter-Based Transfer Learning for Anomaly Detection</h3>
+                    <span>Aug 2023</span>
+                    <p>Implemented a transfer learning framework for cross-domain melt pool image classification using two datasets with distinct distributions.</p>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h3>Automated Trading System with Deep Reinforcement Learning</h3>
+                    <span>Feb 2024</span>
+                    <p>Developed a Deep Q-Network based automated trading system for stock market trading simulation using historical data from S&P 500.</p>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="timeline-item right">
+                <div class="timeline-item-content">
+                    <h3>Employee Management System (Group Project)</h3>
+                    <span>Aug 2022</span>
+                    <p>Developed a comprehensive employee management system using Java and Spring Boot, implementing CRUD operations for employee records, departments, and project assignments.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="awards">
-    <h2>HONORS & AWARDS</h2>
-    <div class="award">
-        <ul>
-            <li>UAB Scholarship (2022)</li>
-            <li>2nd Prize of Xi'an Shiyou Uni. Outstanding Undergraduate Scholarship (2018-2019)</li>
-            <li>1st Prize of National English Competition for College Students (2018)</li>
-            <li>National Scholarship (2017-2018)</li>
-            <li>1st Prize of Xi'an Shiyou Uni. Outstanding Undergraduate Scholarship (2017-2018)</li>
-            <li>3rd Prize of The Chinese Mathematics Competitions (2017-2018)</li>
-            <li>National Encouragement scholarship (2016-2017)</li>
-        </ul>
-    </div>
+    <section id="experience" class="container">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+            <!-- Work Experience -->
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h3>Wuxi Tuzhi Technology Co., LTD - C++ Developer</h3>
+                    <span>Mar 2021 - May 2022</span>
+                    <p>Participated in the development of the SKYCORE and Changxue Refrigeration projects, utilizing C++, MySQL, and CAD technologies to build efficient systems.</p>
+                </div>
+            </div>
+            <!-- Teaching Assistant -->
+            <div class="timeline-item right">
+                <div class="timeline-item-content">
+                    <h3>Florida State University - Teaching Assistant</h3>
+                    <span>Jan 2024 - Dec 2024</span>
+                    <p>Courses: CGS2100 Microcomputer Applications for Business/Economics, CGS2060 Computer Fluency, CIS4379 Computer Security Fundamentals.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <section id="skills" class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills">
+            <div class="skill-item">
+                <h3>Programming Languages</h3>
+                <p>Python, C++, Java, Racket, JavaScript, R</p>
+            </div>
+            <div class="skill-item">
+                <h3>Frameworks & Libraries</h3>
+                <p>PyTorch, TensorFlow, Keras, NumPy, Pandas, Matplotlib, Seaborn, Flower</p>
+            </div>
+            <div class="skill-item">
+                <h3>Databases</h3>
+                <p>SQL, MySQL</p>
+            </div>
+            <div class="skill-item">
+                <h3>Development Tools</h3>
+                <p>Git, VSCode</p>
+            </div>
+            <div class="skill-item">
+                <h3>Operating Systems</h3>
+                <p>Linux, Windows</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <div class="contact">
+            <p><strong>Address:</strong> 1146 GreenTree Ct., Tallahassee, Florida 32304</p>
+            <p><strong>Phone:</strong> 659-202-8253</p>
+            <p><strong>Email:</strong> <a href="mailto:shirleyxltang@gmail.com">shirleyxltang@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/xueling-tang-83759332a/">linkedin.com/in/xueling-tang</a></p>
+            <p><strong>Personal Website:</strong> <a href="https://shirley-xueling-tang.github.io/">shirley-xueling-tang.github.io</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Xueling Tang. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Dynamic Effects -->
     <script>
-        // You can add any JavaScript functionality here if needed
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Resume page loaded successfully!');
+        // Smooth Scrolling
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.createElement('button');
+        backToTopButton.innerHTML = '↑';
+        backToTopButton.id = 'backToTop';
+        backToTopButton.style.position = 'fixed';
+        backToTopButton.style.bottom = '30px';
+        backToTopButton.style.right = '30px';
+        backToTopButton.style.padding = '10px';
+        backToTopButton.style.display = 'none';
+        document.body.appendChild(backToTopButton);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
+
 </body>
 </html>
