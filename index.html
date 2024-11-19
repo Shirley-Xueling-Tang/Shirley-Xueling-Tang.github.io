@@ -17,21 +17,40 @@
             padding-top: 30px;
             padding-bottom: 30px;
             text-align: center;
+            position: relative; /* 为了定位头像 */
         }
         header h1 {
             margin: 0;
             font-size: 48px;
         }
+        /* 头像样式 */
+        .header-photo {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+        .header-photo img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* 使图片变成圆形 */
+            object-fit: cover; /* 防止图片变形 */
+        }
+        /* 固定导航栏 */
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
             background: #35424a;
             color: #ffffff;
             padding: 15px;
             overflow: hidden;
+            z-index: 1000; /* 确保导航栏在最上层 */
         }
         nav ul {
             padding: 0;
             list-style: none;
             text-align: center;
+            margin: 0;
         }
         nav ul li {
             display: inline;
@@ -41,6 +60,16 @@
             color: #ffffff;
             text-decoration: none;
             font-size: 18px;
+            font-weight: bold; /* 加粗字体 */
+            transition: transform 0.3s ease, color 0.3s ease; /* 添加动画效果 */
+        }
+        nav ul li a:hover {
+            transform: scale(1.1); /* 鼠标悬停时字体放大 */
+            color: #ffcc00; /* 改变颜色 */
+        }
+        /* 为了防止内容被固定导航栏遮挡，增加顶部内边距 */
+        body {
+            padding-top: 55px;
         }
         section {
             padding: 20px;
@@ -140,6 +169,11 @@
             .timeline-item.right::after, .timeline-item.left::after {
                 left: 50%;
             }
+            /* 调整头像大小 */
+            .header-photo img {
+                width: 80px;
+                height: 80px;
+            }
         }
     </style>
 </head>
@@ -148,6 +182,9 @@
     <header>
         <h1>Xueling Tang</h1>
         <p>Master of Science in Computer Science</p>
+        <div class="header-photo">
+            <img src="./xl.jpg" alt="Xueling Tang">
+        </div>
     </header>
 
     <nav>
@@ -290,7 +327,7 @@
         <div class="contact">
             <p style="margin-right: 20px;"><strong>Address:</strong> 1146 GreenTree Ct., Tallahassee, Florida 32304</p>
             <p style="margin-right: 20px;"><strong>Phone:</strong> 659-202-8253</p>
-            <p style="margin-right: 20px;"><strong>Email:</strong> <a href="mailto:xt23@fsu.edu">xt23@fsu.edu</a></p>>
+            <p style="margin-right: 20px;"><strong>Email:</strong> <a href="mailto:xt23@fsu.edu">xt23@fsu.edu</a></p>
         </div>
     </section>
 
